@@ -1,5 +1,4 @@
 #!/bin/bash
-rm -Rf /tmp/scriptver/
 cd /tmp/scriptver/ && rm -Rf .git
 UVER=$(cat /tmp/scriptver/roman.ver)
 echo "Server version:"
