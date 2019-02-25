@@ -14,9 +14,11 @@ case "$response" in
         cd /home/$USER/bin/prepare && ./prepare
         ;;
 esac
-cd /tmp/scriptver/ && mv roman.ver version.txt && rm /home/$USER/bin/prepare/version/version.txt && cp version.txt /home/$USER/bin/prepare/version/
+cd /tmp/scriptver/ && mv roman.ver version.txt && rm -Rf /home/$USER/bin/prepare && cp version.txt /home/$USER/bin/prepare/version/
 rm /home/$USER/bin/prepare/prepare
-git clone -q https://github.com/RomanDesigner/script /home/$USER/bin/prepare
+git clone -q https://github.com/RomanDesigner/script /home/$USER/bin/prepare.tmp
+cp /home/$USER/bin/prepare.tmp/. /home/$USER/bin/prepare/
+rm -Rf /home/$USER/bin/prepare.tmp
 cd /home/$USER/bin/prepare/ && chmod +x prepare
 read -r -p "Update succesfull. Start prepare command? [y/N] " response
 case "$response" in
