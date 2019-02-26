@@ -18,6 +18,8 @@ echo -n "50%"
 git clone -q https://github.com/RomanDesigner/script /home/$USER/prepare/scrtmp/
 echo -n "75%"
 cd /home/$USER/prepare/scrtmp/ && cp prepare /home/$USER/bin/prepare/prepare
+cd /home/$USER/prepare/ && rm -Rfv tmp
+cd /home/$USER/prepare/ && rm -Rfv scrtmp
 echo -n "100%"
 read -r -p "Are you sure? [y/N] " response
 case "$response" in
@@ -31,7 +33,3 @@ case "$response" in
         exit 0
         ;;
 esac
-
-
-cd /home/$USER/prepare/ && rm -Rfv tmp
-cd /home/$USER/prepare/ && rm -Rfv scrtmp
