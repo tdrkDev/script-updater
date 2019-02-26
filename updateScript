@@ -1,7 +1,15 @@
 #!/bin/bash
 echo "Server version:"
 cd /home/$USER/prepare/tmp/ && cat roman.ver
-read -r -p "Are you sure? [y/N] " response
+read -r -p "Show changelog? [y/N] " response
+case "$response" in
+    [yY][eE][sS]|[yY]) 
+       echo "Changelog:"
+       cd /home/$USER/prepare/tmp/ && cat chlog.info
+        ;;
+    *) echo ""
+        ;;
+read -r -p "Are you want update? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY]) 
        echo "Update started..."
