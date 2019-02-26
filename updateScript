@@ -11,16 +11,22 @@ case "$response" in
         exit 0
         ;;
 esac
+echo -ne "25%\r"
+sleep 1
 cd /home/$USER/prepare/tmp/ && cp roman.ver version.txt
 echo -ne "25%\r"
+sleep 1
 cd /home/$USER/prepare/tmp/ && cp version.txt /home/$USER/bin/prepare/version/version.txt
 echo -ne "50%\r"
+sleep 1
 git clone -q https://github.com/RomanDesigner/script /home/$USER/prepare/scrtmp/
 echo -ne "75%\r"
+sleep 1
 cd /home/$USER/prepare/scrtmp/ && cp prepare /home/$USER/bin/prepare/prepare
 cd /home/$USER/prepare/ && rm -Rf tmp
 cd /home/$USER/prepare/ && rm -Rf scrtmp
 echo -ne "100%\r"
+sleep 1
 read -r -p "Start prepare? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY]) 
