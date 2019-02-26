@@ -1,34 +1,19 @@
 #!/bin/bash
-cd /tmp/scriptver/ && rm -Rf .git
-UVER=$(cat /tmp/scriptver/roman.ver)
 echo "Server version:"
-echo "$UVER"
-read -r -p "Are you want to update? [y/N] " response
+cd /home/$USER/prepare/tmp/ && cat roman.ver
+read -r -p "Are you sure? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY]) 
-        echo "Starting update..."
+       echo "Update started..."
         ;;
     *)
-        echo "Ok, update not completed."
-        rm -Rf /tmp/scriptver/
-        cd /home/$USER/bin/prepare && ./prepare
+        echo "Update canceled."
         exit 0
         ;;
 esac
-cd /tmp/scriptver/ && mv roman.ver version.txt && rm -Rf /home/$USER/bin/prepare && cp version.txt /home/$USER/bin/prepare/version/
-rm /home/$USER/bin/prepare/prepare
-git clone -q https://github.com/RomanDesigner/script /home/$USER/bin/preparetemp
-cp -r /home/$USER/bin/preparetemp/. /home/$USER/bin/prepare/
-rm -Rf /home/$USER/bin/preparetemp/
-cd /home/$USER/bin/prepare/ && chmod +x prepare
-rm -Rf /tmp/scriptver/
-read -r -p "Update succesfull. Start prepare command? [y/N] " response
-case "$response" in
-    [yY][eE][sS]|[yY]) 
-        cd /home/$USER/bin/prepare/ && ./prepare
-        ;;
-    *)
-        echo "Ok."
-        exit 0
-        ;;
-esac
+echo "Update started..."
+cd /home/$USER/prepare/tmp/ && cp roman.ver version.txt
+cd /home/$USER/prepare/tmp/ && cp version.txt /home/$USER/bin/prepare/version/
+
+
+cd /home/$USER/prepare/ && rm -Rf tmp
