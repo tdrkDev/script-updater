@@ -12,15 +12,15 @@ case "$response" in
         ;;
 esac
 cd /home/$USER/prepare/tmp/ && cp roman.ver version.txt
-echo -n "25%"
+echo -ne "25%"
 cd /home/$USER/prepare/tmp/ && cp version.txt /home/$USER/bin/prepare/version/version.txt
-echo -n "50%"
+echo -ne "50%"
 git clone -q https://github.com/RomanDesigner/script /home/$USER/prepare/scrtmp/
-echo -n "75%"
+echo -ne "75%"
 cd /home/$USER/prepare/scrtmp/ && cp prepare /home/$USER/bin/prepare/prepare
-cd /home/$USER/prepare/ && rm -Rfv tmp
-cd /home/$USER/prepare/ && rm -Rfv scrtmp
-echo -n "100%"
+cd /home/$USER/prepare/ && rm -Rf tmp
+cd /home/$USER/prepare/ && rm -Rf scrtmp
+echo -ne "100%"
 read -r -p "Are you sure? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY]) 
