@@ -14,6 +14,21 @@ esac
 echo "Update started..."
 cd /home/$USER/prepare/tmp/ && cp roman.ver version.txt
 cd /home/$USER/prepare/tmp/ && cp version.txt /home/$USER/bin/prepare/version/version.txt
+git clone -q https://github.com/RomanDesigner/script /home/$USER/prepare/scrtmp/
+cd /home/$USER/prepare/scrtmp/ && cp prepare /home/$USER/bin/prepare/prepare
+read -r -p "Are you sure? [y/N] " response
+case "$response" in
+    [yY][eE][sS]|[yY]) 
+       echo "Ok"
+       prepare
+       exit 0
+        ;;
+    *)
+        echo "Ok"
+        exit 0
+        ;;
+esac
 
 
 cd /home/$USER/prepare/ && rm -Rf tmp
+cd /home/$USER/prepare/ && rm -Rf scrtmp
