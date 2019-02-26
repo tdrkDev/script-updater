@@ -33,5 +33,5 @@ case "$response" in
 esac
 
 
-cd /home/$USER/prepare/ && rm -Rf tmp
-cd /home/$USER/prepare/ && rm -Rf scrtmp
+cd /home/$USER/prepare/ && rm -Rfv tmp
+cd /home/$USER/prepare/ && rm -Rfv scrtmp
