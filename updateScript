@@ -5,7 +5,9 @@ read -r -p "Show changelog? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY]) 
        echo "Changelog:"
+       echo ""
        cd /home/$USER/prepare/tmp/ && cat chlog.info
+       echo ""
         ;;
     *) echo ""
         ;;
