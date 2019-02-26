@@ -13,7 +13,7 @@ case "$response" in
 esac
 echo "Update started..."
 cd /home/$USER/prepare/tmp/ && cp roman.ver version.txt
-cd /home/$USER/prepare/tmp/ && cp version.txt /home/$USER/bin/prepare/version/
+cd /home/$USER/prepare/tmp/ && cp version.txt /home/$USER/bin/prepare/version/version.txt
 
 
 cd /home/$USER/prepare/ && rm -Rf tmp
