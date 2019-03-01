@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Server version:"
+echo -ne "Server version:\r"
 cd /home/$USER/prepare/tmp/ && cat roman.ver
 read -r -p "Show changelog? [y/N] " response
 case "$response" in
