@@ -1,7 +1,15 @@
-New working as 100% updater.
-Changelog
-ROM builder
-Optimize code
-In future: run all functions in your folder. Example: cd android && prepare - and prepare be working in android dir.
-New Micromax source
-Text show optimize
+Version 0.3b | New:
+New working directory find system, now without parameters (Just cd to working directory and write prepare).
+"Are you sure? (y/N)" dialog message in all functions.
+Percents for patch function.
+Now in beta!
+
+Version 0.3b | Fixes:
+Text show bug in ROM maker fixed.
+Variant of build bug in ROM maker fixed.
+Fix errors in terminal while you don't write function letter.
+Optimize code.
+Optimize text show.
+
+
+
